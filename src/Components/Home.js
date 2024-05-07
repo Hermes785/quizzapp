@@ -9,6 +9,8 @@ function HomePage() {
                 <Button variant="primary" className="mx-2" href="/topic1">Topic 1</Button>
                 <Button variant="secondary" className="mx-2" href="/topic2">Topic 2</Button>
                 <Button variant="success" className="mx-2" href="/topic3">Topic 3</Button>
+                <Button variant="warning" className="mx-2" href="/topic4">Topic 4</Button>
+                <Button variant="danger" className="mx-2" href="/topic5">Topic 5</Button>
             </div>
         </Container>
     );
