@@ -561,6 +561,7 @@ const QuizzApp = () => {
     return (
         <div className="container mt-5">
             <h4 className="text-danger">Topic 1 :Select the correct answer</h4> <br />
+            <h5 className="text-warning">Attention la question 20 et 23 du pdf sont manquantes sur ce QCM </h5> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
