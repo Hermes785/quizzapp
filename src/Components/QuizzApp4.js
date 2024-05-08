@@ -239,8 +239,8 @@ const QuizzApp4 = () => {
             answerOptions: [
                 { "answerText": "A. 131.107.2.1", "isCorrect": true, "isChecked": false },
                 { "answerText": "B. 10.0.10.11", "isCorrect": false, "isChecked": false },
-                { "answerText": "A. 172.17.7.1", "isCorrect": false, "isChecked": false },
-                { "answerText": "C. 192.168.10.2. ", "isCorrect": true, "isChecked": false }
+                { "answerText": "C. 172.17.7.1", "isCorrect": false, "isChecked": false },
+                { "answerText": "D. 192.168.10.2 ", "isCorrect": true, "isChecked": false }
             ],
             texteAFter: "You need to provide internet users with access to the applications that run in Cluster1.Which IP address should you include in the DNS record for Cluster1?",
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
@@ -364,7 +364,7 @@ const QuizzApp4 = () => {
                 { answerText: "B. VM3 and VMC only", isCorrect: true, isChecked: false },
                 { answerText: "C. VM1, VM2, VM3, VMA, VMB, and VMC", isCorrect: false, isChecked: false },
                 { answerText: "D. VM1, VM3, VMA, and VMC only", isCorrect: true, isChecked: false },
-                { answerText: "D. VM1 and VM3 only", isCorrect: false, isChecked: false },
+                { answerText: "E. VM1 and VM3 only", isCorrect: false, isChecked: false },
 
             ],
             text: "You create virtual machines in Subscription1 as shown in the following table.",
@@ -867,16 +867,6 @@ const QuizzApp4 = () => {
             "isMultiSelect": false,
             "userAnswer": null
         }
-
-
-
-
-
-
-
-
-
-
 
 
     ]);
