@@ -968,37 +968,51 @@ const QuizzApp2 = () => {
         const startIndex = currentPage * questionsPerPage;
         const endIndex = Math.min(startIndex + questionsPerPage, questions.length);
 
+        const messages = [];
+
         for (let i = startIndex; i < endIndex; i++) {
             const question = questions[i];
             const userAnswer = userAnswers[i];
 
-            const selectedAnswerIndex = Object.keys(userAnswer).find(answerIndex => userAnswer[answerIndex]); // Trouver l'index de la réponse sélectionnée par l'utilisateur
-            const selectedAnswer = selectedAnswerIndex !== undefined ? question.answerOptions[selectedAnswerIndex] : null; // Obtenir la réponse sélectionnée
+            const selectedAnswerIndices = Object.keys(userAnswer).filter(index => userAnswer[index]);
+            const selectedAnswers = selectedAnswerIndices.map(index => question.answerOptions[index]);
 
-            // console.log(`Question ${i + 1}:`);
-            if (selectedAnswer !== null) {
-                if (selectedAnswer.isCorrect) {
-                    // console.log(`La réponse "${selectedAnswer.answerText}" est correcte.`);
+            const correctAnswers = selectedAnswers.filter(answer => answer.isCorrect);
+            const incorrectAnswers = selectedAnswers.filter(answer => !answer.isCorrect);
 
-                    setAffiche(<h5><span style={{ color: 'green' }}> "{selectedAnswer.answerText}" is  correct answer.</span></h5>);
-                } else {
-                    setAffiche(
-                        <div>
-                            <h4>
-                                <span style={{ color: 'red' }}> "{selectedAnswer.answerText}" </span> is incorrect. <br />
-                                Good answer is : <span style={{ color: 'green' }}> "{question.answerOptions.find(option => option.isCorrect).answerText}"</span>
-                            </h4>
-                        </div>
-                    );
-                    //console.log(`La réponse "${selectedAnswer.answerText}" est incorrecte. La bonne réponse est : "${question.answerOptions.find(option => option.isCorrect).answerText}"`);
-                }
-            } else {
-                console.log("Aucune réponse sélectionnée.");
+            const message = [];
+
+            if (correctAnswers.length > 0) {
+                const correctAnswerText = correctAnswers.map(answer => (
+                    <span key={answer.id} className="text-success">"{answer.answerText}"</span>
+                ));
+                message.push(
+                    <h5 key={`correct_${i}`} className="text-success">
+                        {correctAnswerText} {correctAnswerText.length > 1 ? 'are' : 'is'} Correct answer{correctAnswers.length > 1 ? 's' : ''}.
+                    </h5>
+                );
             }
+
+            if (incorrectAnswers.length > 0) {
+                const incorrectAnswerText = incorrectAnswers.map(answer => (
+                    <span key={answer.id} className="text-danger">"{answer.answerText}"</span>
+                ));
+                const correctAnswerText = question.answerOptions
+                    .filter(option => option.isCorrect)
+                    .map(option => (
+                        <span key={option.id} className="text-success">"{option.answerText}"</span>
+                    ));
+                message.push(
+                    <h5 key={`incorrect_${i}`} >
+                        <p className="text-danger">{incorrectAnswerText} {incorrectAnswerText.length > 1 ? 'are' : 'is'}  Incorrect answers:</p> The correct answer{incorrectAnswers.length > 1 ? 's' : ''} {correctAnswerText.length > 1 ? 'are' : 'is'}: {correctAnswerText}.
+                    </h5>
+                );
+            }
+
+            messages.push(<div key={`question_${i}`}>{message}</div>);
         }
 
-
-
+        setAffiche(messages);
     };
 
 
