@@ -28,6 +28,8 @@ import image23 from "./images/Image51.png"
 import image24 from "./images/Image52.png"
 import image25 from "./images/Image53.png"
 import image26 from "./images/Image54.png"
+import image27 from "./images/Image55.png"
+import image28 from "./images/Image56.png"
 
 const QuizzApp4 = () => {
     // Définition des questions avec useState
@@ -854,8 +856,8 @@ const QuizzApp4 = () => {
             texteAFter: "You plan to use Vault1 for the backup of as many virtual machines as possible. Which virtual machines can be backed up to Vault1?",
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
-            image: image8,
-            images: image9,
+            image: image27,
+            images: image28,
         }, {
             "questionText": "You have an Azure subscription that contains an Azure container registry named ContReg1. You enable the Admin user for ContReg1. Which username can you use to sign in to ContReg1?",
             "answerOptions": [
