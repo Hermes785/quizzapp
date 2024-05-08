@@ -11,7 +11,7 @@ const QuizzApp = () => {
             answerOptions: [
                 { answerText: "A. Create Azure Management Groups for each department", isCorrect: false, isChecked: false },
                 { answerText: "B. Create a resource group for each department", isCorrect: false, isChecked: false },
-                { answerText: "C. Assign tags to the virtual machines.", isCorrect: true, isChecked: false },
+                { answerText: "C. Assign tags to the virtual machines", isCorrect: true, isChecked: false },
                 { answerText: "D. Modify the settings of the virtual machines.", isCorrect: false, isChecked: false }
             ],
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
@@ -508,12 +508,12 @@ const QuizzApp = () => {
             const selectedAnswerIndex = Object.keys(userAnswer).find(answerIndex => userAnswer[answerIndex]); // Trouver l'index de la réponse sélectionnée par l'utilisateur
             const selectedAnswer = selectedAnswerIndex !== undefined ? question.answerOptions[selectedAnswerIndex] : null; // Obtenir la réponse sélectionnée
 
-            console.log(`Question ${i + 1}:`);
+            // console.log(`Question ${i + 1}:`);
             if (selectedAnswer !== null) {
                 if (selectedAnswer.isCorrect) {
                     // console.log(`La réponse "${selectedAnswer.answerText}" est correcte.`);
 
-                    setAffiche(<h5><span style={{ color: 'green' }}> "{selectedAnswer.answerText}" is  correct.</span></h5>);
+                    setAffiche(<h5><span style={{ color: 'green' }}> "{selectedAnswer.answerText}" is  correct answer.</span></h5>);
                 } else {
                     setAffiche(
                         <div>
@@ -561,7 +561,7 @@ const QuizzApp = () => {
     return (
         <div className="container mt-5">
             <h4 className="text-danger">Topic 1 :Select the correct answer</h4> <br />
-            <h5 className="text-warning">Attention les questions 20 et 23 du pdf sont manquantes sur ce QCM </h5> <br />
+            <h5 className="text-warning"> questions 20 and 23 of topic 1  of the pdf  are missing from this MCQ </h5> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
@@ -571,7 +571,7 @@ const QuizzApp = () => {
                                 <h5 className="card-title">Question {currentPage * questionsPerPage + questionIndex + 1}</h5>
                                 <p className="card-text" style={{ textAlign: 'justify' }}>{question.questionText}</p>
                                 {question.answerOptions.map((answerOption, answerIndex) => (
-                                    <div key={answerIndex} className="form-check text-left col-md-6" style={{ textAlign: 'justify' }}>
+                                    <div key={answerIndex} className="form-check " style={{ textAlign: 'justify' }}>
                                         <input
                                             className="form-check-input"
                                             type="checkbox"
@@ -594,11 +594,9 @@ const QuizzApp = () => {
                     ))}
                     {affiche}
                     <div>
-
                         <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
-
                         <button onClick={goToNextPage} className="btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
                         <button onClick={handleScoreCalculation} className="btn btn-success ml-2">Soumettre</button>
                     </div>
