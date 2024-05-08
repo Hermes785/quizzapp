@@ -42,7 +42,7 @@ const QuizzApp2 = () => {
                 { answerText: "E. a Security group that uses the Dynamic Device membership type", isCorrect: false, isChecked: false },
 
             ],
-            isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
+            isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null // Réponse de l'utilisateur pour cette question
         },
         {
@@ -75,7 +75,7 @@ const QuizzApp2 = () => {
         {
             questionText: "You recently created a new Azure subscription that contains a user named Admin1. Admin1 attempts to deploy an Azure Marketplace resource by using an Azure Resource Manager template. Admin1 deploys the template by usingAzure PowerShell and receives the following error message: `User failed validation to purchase resources. Error message: `Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal (http://go.microsoft.com/fwlink/?LinkId=534873 and con􀀁gure programmatic deployment for the Marketplace item or create it there for the 􀀁rst time.`You need to ensure that Admin1 can deploy the Marketplace resource successfully. What should you do?",
             answerOptions: [
-                { answerText: "A. From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet", isCorrect: true, isChecked: false },
+                { answerText: "A. From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet", isCorrect: false, isChecked: false },
                 { answerText: "B. From the Azure portal, register the Microsoft.Marketplace resource provider", isCorrect: false, isChecked: false },
                 { answerText: "C. From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet", isCorrect: true, isChecked: false },
                 { answerText: "D. From the Azure portal, assign the Billing administrator role to Admin1", isCorrect: false, isChecked: false },
@@ -137,7 +137,7 @@ const QuizzApp2 = () => {
                 { answerText: "D. General settings from the Groups blade", isCorrect: true, isChecked: false }
 
             ],
-            isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
+            isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null // Réponse de l'utilisateur pour cette question
         }
         ,
@@ -261,7 +261,7 @@ const QuizzApp2 = () => {
                 { answerText: "E. an Azure Application Gateway ", isCorrect: true, isChecked: false }
 
             ],
-            isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
+            isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null // Réponse de l'utilisateur pour cette question
         }
         ,
@@ -589,11 +589,11 @@ const QuizzApp2 = () => {
                 { answerText: "B. Upload blob data to storageacct1234.", isCorrect: false, isChecked: false },
                 { answerText: "C. dify the 􀀁rewall of storageacct1234.", isCorrect: false, isChecked: false },
                 { answerText: "D. View blob data in storageacct1234.", isCorrect: false, isChecked: false },
-                { answerText: "E. View 􀀁le shares in storageacct1234.", isCorrect: false, isChecked: false }
+                { answerText: "E. View 􀀁le shares in storageacct1234.", isCorrect: true, isChecked: false }
 
             ],
             texteAFter: "Which two actions can User1 perform? Each correct answer presents a complete solution.NOTE: Each correct selection is worth one point.",
-            isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
+            isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
             image: image7
         }, {
@@ -1078,8 +1078,9 @@ const QuizzApp2 = () => {
                         <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
-                        <button onClick={goToNextPage} className="btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
-                        <button onClick={handleScoreCalculation} className="btn btn-success ml-2">Soumettre</button>
+                        <button onClick={goToNextPage} className=" mx-2 btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
+                        <button onClick={handleScoreCalculation} className="mx-2 btn btn-success ml-2">Soumettre</button>
+
                     </div>
                 </>
             ) : (

@@ -597,8 +597,9 @@ const QuizzApp = () => {
                         <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
-                        <button onClick={goToNextPage} className="btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
-                        <button onClick={handleScoreCalculation} className="btn btn-success ml-2">Soumettre</button>
+                        <button onClick={goToNextPage} className=" mx-2 btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
+                        <button onClick={handleScoreCalculation} className="mx-2 btn btn-success ml-2">Soumettre</button>
+
                     </div>
                 </>
             ) : (
