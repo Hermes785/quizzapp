@@ -91,7 +91,7 @@ const QuizzApp2 = () => {
             answerOptions: [
                 { answerText: "A. From the Licenses blade, assign a new license", isCorrect: false, isChecked: false },
                 { answerText: "B. From the Directory role blade, modify the directory role", isCorrect: true, isChecked: false },
-                { answerText: "C. From the Groups blade, invite the user account to a new group", isCorrect: true, isChecked: false },
+                { answerText: "C. From the Groups blade, invite the user account to a new group", isCorrect: false, isChecked: false },
 
 
             ],
