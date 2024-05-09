@@ -106,7 +106,7 @@ const QuizzApp2 = () => {
                 { answerText: "A. From the Licenses blade of Azure AD, assign a license", isCorrect: true, isChecked: false },
                 { answerText: "B. From the Groups blade of each user, invite the users to a group", isCorrect: false, isChecked: false },
                 { answerText: "C. From the Azure AD domain, add an enterprise application", isCorrect: false, isChecked: false },
-                { answerText: "D. From the Directory role blade of each user, modify the directory role", isCorrect: true, isChecked: false }
+                { answerText: "D. From the Directory role blade of each user, modify the directory role", isCorrect: false, isChecked: false }
 
             ],
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
@@ -120,7 +120,7 @@ const QuizzApp2 = () => {
                 { answerText: "A. Create an automation runbook", isCorrect: false, isChecked: false },
                 { answerText: "B. Deploy a function app", isCorrect: false, isChecked: false },
                 { answerText: "C. Deploy the IT Service Management Connector (ITSM)", isCorrect: true, isChecked: false },
-                { answerText: "D. Create a noti􀀁cation", isCorrect: true, isChecked: false }
+                { answerText: "D. Create a noti􀀁cation", isCorrect: false, isChecked: false }
 
             ],
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
@@ -134,10 +134,10 @@ const QuizzApp2 = () => {
                 { answerText: "A. Device settings from the Devices blade", isCorrect: true, isChecked: false },
                 { answerText: "B.Providers from the MFA Server blade", isCorrect: false, isChecked: false },
                 { answerText: "C. User settings from the Users blade", isCorrect: false, isChecked: false },
-                { answerText: "D. General settings from the Groups blade", isCorrect: true, isChecked: false }
+                { answerText: "D. General settings from the Groups blade", isCorrect: false, isChecked: false }
 
             ],
-            isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
+            isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null // Réponse de l'utilisateur pour cette question
         }
         ,
@@ -162,7 +162,7 @@ const QuizzApp2 = () => {
                 { answerText: "A. Remove User1 from the Security Reader and Reader roles for Subscription1", isCorrect: false, isChecked: false },
                 { answerText: "B. Assign User1 the User Access Administrator role for VNet1.", isCorrect: true, isChecked: false },
                 { answerText: "C. Assign User1 the Network Contributor role for VNet1.", isCorrect: false, isChecked: false },
-                { answerText: "D. Assign User1 the Network Contributor role for RG1", isCorrect: true, isChecked: false }
+                { answerText: "D. Assign User1 the Network Contributor role for RG1", isCorrect: false, isChecked: false }
 
             ],
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
@@ -763,8 +763,8 @@ const QuizzApp2 = () => {
             answerOptions: [
                 { answerText: "A. Storage Account Contributor", isCorrect: false, isChecked: false },
                 { answerText: "B. Contributor.", isCorrect: false, isChecked: false },
-                { answerText: "C. Storage Blob Data Contributor", isCorrect: false, isChecked: false },
-                { answerText: "D. Reader and Data Access", isCorrect: true, isChecked: false },
+                { answerText: "C. Storage Blob Data Contributor", isCorrect: true, isChecked: false },
+                { answerText: "D. Reader and Data Access", isCorrect: false, isChecked: false },
 
 
             ],
@@ -881,8 +881,8 @@ const QuizzApp2 = () => {
             questionText: "You have an Azure subscription that contains the resources shown in the following table.",
             answerOptions: [
                 { answerText: "A.data protection", isCorrect: false, isChecked: false },
-                { answerText: "B. a private endpoint", isCorrect: false, isChecked: false },
-                { answerText: "C. Public network access in the Firewalls and virtual networks settings", isCorrect: true, isChecked: false },
+                { answerText: "B. a private endpoint", isCorrect: true, isChecked: false },
+                { answerText: "C. Public network access in the Firewalls and virtual networks settings", isCorrect: false, isChecked: false },
                 { answerText: "D. a shared access signature (SAS)", isCorrect: false, isChecked: false },
 
 
