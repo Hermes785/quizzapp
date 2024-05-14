@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
-const QuizzApp = () => {
+const QuizzApp1 = () => {
     // Définition des questions avec useState
     const [questions, setQuestions] = useState([
         {
@@ -645,4 +645,4 @@ const QuizzApp = () => {
     );
 }
 
-export default QuizzApp;
+export default QuizzApp1;

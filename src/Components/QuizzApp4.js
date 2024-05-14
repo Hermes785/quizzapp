@@ -727,7 +727,7 @@ const QuizzApp4 = () => {
                 { "answerText": "C. Instance1 and Instance2 only", "isCorrect": true, "isChecked": false },
                 { "answerText": "D. Instance3 and Instance4 only ", "isCorrect": false, "isChecked": false },
             ],
-            texteAFter: "Subscription1 also includes a virtual network named VNET2. VM1 connects to a virtual network named VNET2 by using a network interfacenamed NIC1.You need to create a new network interface named NIC2 for VM1.Solution: You create NIC2 in RG2 and West US.Does this meet the goal?",
+            texteAFter: "Which instances can you deploy to a container group",
             isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
             image: image17
@@ -750,7 +750,7 @@ const QuizzApp4 = () => {
                 { "answerText": "C. IP1, IP2, and IP5 only", "isCorrect": false, "isChecked": false },
                 { "answerText": "D. IP1, IP2, IP4, and IP5 only ", "isCorrect": true, "isChecked": false },
             ],
-            texteAFter: "Subscription1 also includes a virtual network named VNET2. VM1 connects to a virtual network named VNET2 by using a network interfacenamed NIC1.You need to create a new network interface named NIC2 for VM1.Solution: You create NIC2 in RG2 and West US.Does this meet the goal?",
+            texteAFter: "You plan to deploy an Instance of Azure Firewall Premium named FW1?",
             isMultiSelect: true, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
             image: image18
