@@ -622,6 +622,7 @@ const QuizzApp1 = () => {
 
                     <h3>Résultats du Quiz</h3>
                     <p>Score: {score} / {questions.length}</p>
+                    {score < 80 ? "💀" : " 🔥"}
                     <p>Pourcentage de réussite: {Math.round((score / questions.length) * 100)}%</p>
                     <div className="progress">
                         <div
