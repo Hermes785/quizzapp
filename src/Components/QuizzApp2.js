@@ -904,6 +904,7 @@ const QuizzApp2 = () => {
     const [userAnswers, setUserAnswers] = useState([]); // Réponses de l'utilisateur
     const [affiche, setAffiche] = useState(''); //
 
+    const calculePourcentag = Math.round((score / questions.length) * 100)
 
     // Nombre de questions par page
     const questionsPerPage = 1;
@@ -1104,13 +1105,13 @@ const QuizzApp2 = () => {
                     <h3>Résultats du Quiz</h3>
                     <p>Score: {score} / {questions.length}</p>
                     {score < 80 ? "💀" : " 🔥"}
-                    <p>Pourcentage de réussite: {Math.round((score / questions.length) * 100)}%</p>
+                    <p>Pourcentage de réussite: {calculePourcentag}%</p>
                     <div className="progress">
                         <div
-                            className="progress-bar bg-success"
+                            className={calculePourcentag < 80 ? "progress-bar bg-danger" : "progress-bar bg-success"}
                             role="progressbar"
-                            style={{ width: `${Math.round((score / questions.length) * 100)}%` }}
-                            aria-valuenow={Math.round((score / questions.length) * 100)}
+                            style={{ width: `${calculePourcentag}%` }}
+                            aria-valuenow={calculePourcentag}
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >

@@ -556,6 +556,7 @@ const QuizzApp3 = () => {
 
     // Nombre de questions par page
     const questionsPerPage = 1;
+    const calculePourcentag = Math.round((score / questions.length) * 100)
 
     // Effet pour sauvegarder les réponses de l'utilisateur à chaque changement de page
     useEffect(() => {
@@ -756,10 +757,10 @@ const QuizzApp3 = () => {
                     <p>Pourcentage de réussite: {Math.round((score / questions.length) * 100)}%</p>
                     <div className="progress">
                         <div
-                            className="progress-bar bg-success"
+                            className={calculePourcentag < 80 ? "progress-bar bg-danger" : "progress-bar bg-success"}
                             role="progressbar"
-                            style={{ width: `${Math.round((score / questions.length) * 100)}%` }}
-                            aria-valuenow={Math.round((score / questions.length) * 100)}
+                            style={{ width: `${calculePourcentag}%` }}
+                            aria-valuenow={calculePourcentag}
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
