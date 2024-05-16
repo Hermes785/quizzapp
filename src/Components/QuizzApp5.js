@@ -503,7 +503,7 @@ const QuizzApp5 = () => {
                 { "answerText": "B. No", "isCorrect": true, "isChecked": false },
 
             ],
-            texteAFter: "You discover that connections to App1 from 131.107.100.50 over TCP port 443 fail.You verify that the Load Balancer rules are con􀀁gured correctly.You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.Solution: You delete the BlockAllOther443 inbound security rule.Does this meet the goal?",
+            texteAFter: "You discover that connections to App1 from 131.107.100.50 over TCP port 443 fail.You verify that the Load Balancer rules are con�gured correctly.You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.Solution: You modify the priority of the Allow_131.107.100.50 inbound security rule.Does this meet the goal?",
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
             image: image21
