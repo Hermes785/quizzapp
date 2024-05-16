@@ -32,7 +32,7 @@ import image27 from "./images/Image84.png"
 import image28 from "./images/Image85.png"
 import image29 from "./images/Image86.png"
 import image30 from "./images/Image87.png"
-import image31 from "./images/Image19.png"
+import image31 from "./images/Image88.png"
 import image32 from "./images/Image89.png"
 import image33 from "./images/Image90.png"
 import image34 from "./images/Image91.png"
@@ -43,6 +43,7 @@ import image38 from "./images/Image95.png"
 import image39 from "./images/Image96.png"
 import image40 from "./images/Image97.png"
 import image41 from "./images/Image100.png"
+import image42 from "./images/Image101.png"
 
 
 const QuizzApp5 = () => {
@@ -992,7 +993,7 @@ const QuizzApp5 = () => {
             texteAFter: "All the resources connect to a virtual network named VNet1.You plan to deploy an Azure Bastion host named Bastion1 to VNet1. Which resources can be protected by using Bastion1?",
             isMultiSelect: false, // Indique si plusieurs options peuvent être sélectionnées
             userAnswer: null, // Réponse de l'utilisateur pour cette question
-            image: image34
+            image: image42
 
         },
         {
@@ -1186,8 +1187,8 @@ const QuizzApp5 = () => {
             questionText: " You have an app named App1 that is installed on two Azure virtual machines named VM1 and VM2. Connections to App1 are managed by using anAzure Load Balancer."
             , answerOptions: [
 
-                { "answerText": "A. VM1, Disk1, and storage1 only", "isCorrect": true, "isChecked": false },
-                { "answerText": "B. VM1, Disk1, NetInt1, and VNet1", "isCorrect": false, "isChecked": false },
+                { "answerText": "A. Yes", "isCorrect": true, "isChecked": false },
+                { "answerText": "B. No", "isCorrect": false, "isChecked": false },
 
 
 
@@ -1409,8 +1410,8 @@ const QuizzApp5 = () => {
 
     return (
         <div className="container mt-5">
-            <h4 className="text-danger">Topic 5 :Select the correct answer</h4> <br />
-            <h5 className="text-warning"> Attention  questions 1,3,5,6,10,12,13,20,25,26,27,31,32,38,42,43,44,47,48,49,56,65,66,70.71,72,76,79,80,83,88,90,93,94,96,97,107,111,120,135,137 of topic 5 of the pdf   are missing from this MCQ</h5> <br />
+            <h4 className="text-success">Topic 5 :Select the correct answer</h4> <br />
+            <h6 className="text">   ⚠ Questions 1,3,5,6,10,12,13,20,25,26,27,31,32,38,42,43,44,47,48,49,56,65,66,70.71,72,76,79,80,83,88,90,93,94,96,97,107,111,120,135,137 of topic 5 of the pdf   are missing from this MCQ</h6> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
@@ -1457,7 +1458,7 @@ const QuizzApp5 = () => {
 
                     {affiche}
                     <div>
-                        <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
+                        <button onClick={VerifyAnswer} className="btn btn-warning mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
                         <button onClick={goToNextPage} className=" mx-2 btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
@@ -1486,7 +1487,7 @@ const QuizzApp5 = () => {
                         </div>
                     </div> <br />
                     <div>
-                        <Button variant="success " className="mx-2" href="/">back to hompage 🙂</Button>
+                        <Button variant={calculePourcentag < 80 ? "danger " : "success"} className="mx-2" href="/">{calculePourcentag < 80 ? "back to hompage😢 " : "back to homepage 😎"} </Button>
                     </div>
                 </div>
             )}

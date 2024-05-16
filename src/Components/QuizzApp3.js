@@ -691,8 +691,8 @@ const QuizzApp3 = () => {
 
     return (
         <div className="container mt-5">
-            <h4 className="text-danger">Topic 3 :Select the correct answer</h4> <br />
-            <h5 className="text-warning"> Attention  questions 2,4,5,7,8,9,10,11,12,13,14,17,18,21,23,25,29,30,31,32,33,39,42,44,47,49,50,52,53,56,58,59,62,64,69,71,72,75,77,80,83,86,87,88,89,90 of topic 3 of the pdf   are missing from this MCQ</h5> <br />
+            <h4 className="text-success">Topic 3 :Select the correct answer</h4> <br />
+            <h5 className="text"> ⚠ Questions 2,4,5,7,8,9,10,11,12,13,14,17,18,21,23,25,29,30,31,32,33,39,42,44,47,49,50,52,53,56,58,59,62,64,69,71,72,75,77,80,83,86,87,88,89,90 of topic 3 of the pdf   are missing from this MCQ</h5> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
@@ -739,7 +739,7 @@ const QuizzApp3 = () => {
 
                     {affiche}
                     <div>
-                        <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
+                        <button onClick={VerifyAnswer} className="btn btn-warning mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
                         <button onClick={goToNextPage} className=" mx-2 btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
@@ -768,7 +768,7 @@ const QuizzApp3 = () => {
                         </div>
                     </div> <br />
                     <div>
-                        <Button variant="success " className="mx-2" href="/">back to hompage 🙂</Button>
+                        <Button variant={calculePourcentag < 80 ? "danger " : "success"} className="mx-2" href="/">{calculePourcentag < 80 ? "back to hompage😢 " : "back to homepage 😎"} </Button>
                     </div>
                 </div>
             )}

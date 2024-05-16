@@ -576,8 +576,8 @@ const QuizzApp1 = () => {
 
     return (
         <div className="container mt-5">
-            <h4 className="text-danger">Topic 1 :Select the correct answer</h4> <br />
-            <h5 className="text-warning"> questions 20 and 23 of topic 1  of the pdf  are missing from this MCQ </h5> <br />
+            <h4 className="text-success">Topic 1 :Select the correct answer</h4> <br />
+            <h5 className="text">⚠ Questions 20 and 23 of topic 1  of the pdf  are missing from this MCQ </h5> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
@@ -610,7 +610,7 @@ const QuizzApp1 = () => {
                     ))}
                     {affiche}
                     <div>
-                        <button onClick={VerifyAnswer} className="btn btn-secondary mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
+                        <button onClick={VerifyAnswer} className="btn btn-warning mr-2" disabled={userAnswers.every(answer => Object.values(answer).every(value => value === false))}>
                             Vérifier les réponses
                         </button>
                         <button onClick={goToNextPage} className=" mx-2 btn btn-primary" disabled={currentPage === Math.ceil(questions.length / questionsPerPage) - 1}>Page suivante</button>
@@ -639,7 +639,7 @@ const QuizzApp1 = () => {
                         </div>
                     </div> <br />
                     <div>
-                        <Button variant="success " className="mx-2" href="/">back to hompage 🙂</Button>
+                        <Button variant={calculePourcentag < 80 ? "danger " : "success"} className="mx-2" href="/">{calculePourcentag < 80 ? "back to hompage😢 " : "back to homepage 😎"} </Button>
                     </div>
                 </div>
             )}
