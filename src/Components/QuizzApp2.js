@@ -1043,7 +1043,7 @@ const QuizzApp2 = () => {
     return (
         <div className="container mt-5">
             <h4 className="text-success">Topic 2 :Select the correct answer</h4> <br />
-            <h5 className="text"> ⚠  Questions 1,4,5,7,14,21,23,25,28,31,32,37,41,44,45,46,48,52,54,57,66,67,70,72,75,72,80,81,86,87,91,92,93,95,100 of topic 2 of the pdf   are missing from this MCQ</h5> <br />
+            <h5 className="text"> ⚠  Questions 1,4,5,7,14,21,23,25,28,31,32,37,41,44,45,46,48,52,54,57,66,67,70,72,75,77,80,81,86,87,91,92,93,95,100 of topic 2 of the pdf   are missing from this MCQ</h5> <br />
             {!showScore ? (
                 // Affichage des questions et des options de réponse
                 <>
