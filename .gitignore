@@ -21,5 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/~$OPIC 2.docx
-/~$TOPIC 1.doc
+/./~$OPIC 2.docx
+/./~$OPIC 1.doc
+././~$OPIC 3.docx
