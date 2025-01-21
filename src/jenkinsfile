@@ -35,7 +35,6 @@ pipeline{
                         sh "docker tag ${DOCKER_IMAGE} docker.io/hermesn/quizz_app:latest"
                         sh "docker push ${fullImageName}"
                         sh "docker push docker.io/hermesn/quizz_app:latest"
-
                         echo "Docker image pushed successfully!"
                     }
                 }
