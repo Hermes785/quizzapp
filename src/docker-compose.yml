@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  quizz-app:
+    container_name: quizz-app_container
+    image: hermesn/quizzApp:latest
+    ports:
+      - 3012:80
+    environment:
+      NODE_ENV: production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.quizz-app.rule=Host(`quizz.mia-services.fr`)"
+      - "traefik.http.routers.quizz-app.entrypoints=websecure"
+      - "traefik.http.routers.quizz-app.tls.certresolver=myresolver"
+      - "traefik.http.services.quizz-app.loadbalancer.server.port=80"
+    networks:
+      - my_networks
+
+networks:
+  my_networks:
+    external: true

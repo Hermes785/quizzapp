@@ -1,0 +1,74 @@
+pipeline{
+    tools{
+        nodejs:'NodeJS'
+    }
+ environment{
+  APP_NAME = "quizz-app_img"
+        DOCKER_IMAGE = "${APP_NAME}:${env.BUILD_ID}"
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+ }
+    stages{
+      stage("Checkout scm"){
+          steps{
+         checkout scm
+        }
+      }
+      stage("install dependancies"){
+        sh 'npm install'
+      }
+
+      stage("build application"){
+        sh 'npm  run build'
+      }
+
+      stage("build image and push image to docker hubs "){
+          when {
+                expression { env.BRANCH_NAME == 'main' }
+            }
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                        def fullImageName = "docker.io/hermesn/hermesn/quizz_app:${env.BUILD_ID}"
+                        echo "Building Docker image ${fullImageName}"
+                        sh "docker build -t ${DOCKER_IMAGE} ."
+                        sh "docker tag ${DOCKER_IMAGE} ${fullImageName}"
+                        sh "docker tag ${DOCKER_IMAGE} docker.io/hermesn/quizz_app:latest"
+                        sh "docker push ${fullImageName}"
+                        sh "docker push docker.io/hermesn/quizz_app:latest"
+
+                        echo "Docker image pushed successfully!"
+                    }
+                }
+            }
+
+      }
+       stage('Approval for Production Deployment') {
+            when {
+                expression { env.BRANCH_NAME == 'main' }
+            }
+            steps {
+                input message: 'Approve deployment to production?', ok: 'Deploy'
+            }
+        }
+
+        stage('Deploy to Production') {
+            when {
+                expression { env.BRANCH_NAME == 'main' }
+            }
+            steps {
+                script {
+                    sh '''
+                        docker stop  quizz-app_container || true
+                        docker rm  quizz-app_container || true
+                        docker-compose -f docker-compose.yml pull
+                        docker-compose -f docker-compose.yml up -d --build
+                    '''
+                }
+            }
+        }
+    }
+
+}
+post{
+
+}
