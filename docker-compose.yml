@@ -14,8 +14,8 @@ services:
       - "traefik.http.routers.quizz-app.tls.certresolver=myresolver"
       - "traefik.http.services.quizz-app.loadbalancer.server.port=80"
     networks:
-      - my_networks
+      - my_network
 
 networks:
-  my_networks:
+  my_network:
     external: true
