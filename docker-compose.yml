@@ -2,7 +2,7 @@ version: "3.8"
 services:
   quizz-app:
     container_name: quizz-app_container
-    image: hermesn/quizzApp:latest
+    image: hermesn/quizz_app:latest
     ports:
       - 3012:80
     environment:
