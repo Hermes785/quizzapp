@@ -1,6 +1,6 @@
 pipeline{
     tools{
-        nodejs:'NodeJS'
+        nodejs 'NodeJS'
     }
  environment{
   APP_NAME = "quizz-app_img"
